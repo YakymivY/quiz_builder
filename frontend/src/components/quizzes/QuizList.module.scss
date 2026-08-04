@@ -1,0 +1,68 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.status {
+  margin: 0;
+  color: $color-text-muted;
+}
+
+.error {
+  margin: 0;
+  padding: $space-md;
+  border-radius: $radius-sm;
+  background: rgba($color-danger, 0.08);
+  color: $color-danger;
+  font-size: 0.9375rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: $space-sm $space-sm $space-sm $space-lg;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    border-color: #c9c2b6;
+    box-shadow: 0 2px 8px rgba($color-text, 0.04);
+  }
+}
+
+.link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+  padding-block: $space-sm;
+  min-width: 0;
+}
+
+.title {
+  font-weight: 600;
+  color: $color-text;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  font-size: 0.875rem;
+  color: $color-text-muted;
+}

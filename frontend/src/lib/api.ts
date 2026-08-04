@@ -6,6 +6,31 @@ import type {
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3001';
 
+async function parseError(response: Response): Promise<string> {
+  const fallback = `Request failed: ${response.status}`;
+  const text = await response.text();
+
+  if (!text) {
+    return fallback;
+  }
+
+  try {
+    const body = JSON.parse(text) as { message?: string | string[] };
+
+    if (Array.isArray(body.message)) {
+      return body.message.join(', ');
+    }
+
+    if (typeof body.message === 'string') {
+      return body.message;
+    }
+  } catch {
+    return text;
+  }
+
+  return fallback;
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${BASE_URL}${path}`, {
     ...init,
@@ -16,8 +41,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   });
 
   if (!response.ok) {
-    const message = await response.text();
-    throw new Error(message || `Request failed: ${response.status}`);
+    throw new Error(await parseError(response));
   }
 
   if (response.status === 204) {

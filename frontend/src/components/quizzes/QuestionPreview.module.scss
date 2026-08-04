@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+
+.card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: $space-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-md;
+}
+
+.number {
+  font-family: $font-display;
+  font-weight: 600;
+  color: $color-text;
+}
+
+.type {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $color-text-muted;
+  background: $color-surface-muted;
+  padding: $space-xs $space-sm;
+  border-radius: $radius-sm;
+}
+
+.text {
+  margin: 0;
+  color: $color-text;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.previewGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.previewOption {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  color: $color-text-muted;
+  font-size: 0.9375rem;
+
+  input {
+    margin: 0;
+    accent-color: $color-accent;
+  }
+}

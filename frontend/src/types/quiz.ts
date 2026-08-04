@@ -6,18 +6,12 @@ export interface QuizListItem {
   questionCount: number;
 }
 
-export interface QuestionOption {
-  id: string;
-  label: string;
-  order: number;
-}
-
 export interface Question {
   id: string;
   text: string;
   type: QuestionType;
   order: number;
-  options?: QuestionOption[];
+  options?: string[];
 }
 
 export interface QuizDetail {
@@ -36,4 +30,15 @@ export interface CreateQuestionPayload {
 export interface CreateQuizPayload {
   title: string;
   questions: CreateQuestionPayload[];
+}
+
+export interface CreateQuestionFormValue {
+  text: string;
+  type: QuestionType;
+  options: string[];
+}
+
+export interface CreateQuizFormValues {
+  title: string;
+  questions: CreateQuestionFormValue[];
 }

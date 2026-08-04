@@ -1,0 +1,38 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+}
+
+.status {
+  margin: 0;
+  color: $color-text-muted;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $space-lg;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0 0 $space-xs;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.meta {
+  margin: 0;
+  color: $color-text-muted;
+  font-size: 0.9375rem;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+}

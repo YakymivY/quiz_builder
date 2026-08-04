@@ -1,0 +1,49 @@
+@use '../../styles/variables' as *;
+
+.card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: $space-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-md;
+}
+
+.number {
+  font-family: $font-display;
+  font-weight: 600;
+  color: $color-text;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.optionsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-md;
+}
+
+.optionRow {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+}

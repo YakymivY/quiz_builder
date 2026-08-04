@@ -1,0 +1,46 @@
+@use '../../styles/variables' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+}
+
+.questionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+}
+
+.questionsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-md;
+  flex-wrap: wrap;
+
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+}
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitError {
+  margin: 0;
+  padding: $space-md;
+  border-radius: $radius-sm;
+  background: rgba($color-danger, 0.08);
+  color: $color-danger;
+  font-size: 0.9375rem;
+}
