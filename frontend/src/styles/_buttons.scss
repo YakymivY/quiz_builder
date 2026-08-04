@@ -1,0 +1,60 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+%btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
+  padding: $space-sm $space-lg;
+  border-radius: $radius-sm;
+  border: 1px solid transparent;
+  font-family: $font-body;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+.btnPrimary {
+  @extend %btn-base;
+  background: $color-accent;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background: $color-accent-hover;
+  }
+}
+
+.btnSecondary {
+  @extend %btn-base;
+  background: $color-surface;
+  color: $color-text;
+  border-color: $color-border;
+
+  &:hover:not(:disabled) {
+    background: $color-surface-muted;
+  }
+}
+
+.btnDanger {
+  @extend %btn-base;
+  background: transparent;
+  color: $color-danger;
+  border-color: transparent;
+  padding: $space-sm;
+
+  &:hover:not(:disabled) {
+    color: $color-danger-hover;
+    background: rgba($color-danger, 0.08);
+  }
+}

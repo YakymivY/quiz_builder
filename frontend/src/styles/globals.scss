@@ -1,0 +1,52 @@
+@use 'variables';
+@use 'mixins';
+@use 'typography';
+@use 'buttons';
+@use 'forms';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+main {
+  padding-block: variables.$space-xl;
+}
+
+.pageHeader {
+  @include mixins.container;
+  margin-bottom: variables.$space-xl;
+
+  p {
+    margin-top: variables.$space-sm;
+    max-width: 42ch;
+  }
+}
+
+.pageContent {
+  @include mixins.container;
+}
+
+.emptyState {
+  text-align: center;
+  padding: variables.$space-2xl variables.$space-lg;
+  background: variables.$color-surface;
+  border: 1px dashed variables.$color-border;
+  border-radius: variables.$radius-md;
+
+  p {
+    margin-bottom: variables.$space-lg;
+  }
+}
